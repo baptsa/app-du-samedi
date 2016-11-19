@@ -1,0 +1,21 @@
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <h2><%= @bar.name.capitalize %></h2>
+    </div>
+    <div class="media-section">
+      <h2><%= @bar.description %></h2>
+    </div>
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
+      <h3>Reviews</h3>
+      <%= link_to "Add a review", new_bar_review_path(@bar, @review), {class: "btn btn-primary"} %>
+        <% @bar.reviews.each do |review| %>
+          <h4><%= review.title %></h4>
+          <p><%= review.content %></p>
+          <p class="etoile">***************</p>
+        <% end %>
+    </div>
+  </div>
+</div>
